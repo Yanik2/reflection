@@ -17,8 +17,7 @@ public class TestingFramework {
         final var tests = findMethodsByPrefix(methods, "test");
 
         for (Method test : tests) {
-            final var target = testClass.getConstructor().newInstance();
-            testClass.getDeclaredC
+            final var target = testClass.getDeclaredConstructor().newInstance();
             invokeMethod(setup, target);
             invokeMethod(test, target);
         }
